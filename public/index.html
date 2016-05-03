@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="appZ">
+  <head>
+    <meta charset="utf-8">
+
+    <script src="bower_components/angular/angular.js"></script>
+
+    <script src="app.js"></script>
+
+     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+     <link rel="stylesheet" href="style.css">
+  </head>
+
+
+  <body ng-controller="mainController">
+
+  <br>
+  <h1 class="text-center">What the f**k do I need on my final?</h1>
+  <br>
+
+<div class="container">
+  <div class="jumbotron">
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Items</th>
+            <th>Percent Worth</th>
+            <th>Grade</th>
+          </tr>
+      </thead>
+
+      <tbody>
+        <tr ng-repeat="cat in categories">
+          <td><input type="text" placeholder="Ex: Homework, Quizzes, etc." ng-model="cat.name"></input></td>
+      <td><input type="number" placeholder="% of final grade" ng-model="cat.percent"></input></td>
+      <td><input type="number" placeholder="Grade" ng-model="cat.grade"></input></td>
+        </tr>
+        
+      </tbody>
+
+    </table>
+
+     <div class="text-center"><span type="text"><b>Final</b>: </span><br> <input type="number" placeholder="% of final grade" ng-model="final[0]"></input></div>
+
+      <br><br>
+    <div class="text-center">
+      <button ng-click="send()" class="btn btn-primary btn-md">Enter</button>
+      <button ng-click="add()" class="middle btn btn-primary btn-md">Add Item</button>
+      <button ng-click="delete()" class="btn btn-primary btn-md">Remove Item</button>
+    </div>
+
+  </div>
+</div>
+
+<div class="container" ng-show="isTime">
+  <div class="jumbotron">
+
+  <h1 ng-show="isNeeded">The lowest grade you can get and still pass is {{whatIsNeeded}}</h1>
+  <h1 ng-show="!isNeeded">You don't need to even take the final to pass!</h1>
+  <br>
+
+
+    <h4 ng-repeat="c in cutOffs" ng-if="c.needed > 0" class="text-center">
+      
+    To get an {{c.letter}} ( {{c.cutOff}} ) you will need to get a {{c.needed}} on your final.
+
+
+    </h4>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="jumbotron">
+
+    <h1 class="text-center">Grading</h1>
+
+    <div ng-repeat="c in cutOffs" class="text-center">
+      
+      <span>{{c.letter}} has a cut off at</span>
+      <input type="number" ng-model="c.cutOff" class="smIn"></input>
+
+    </div>
+
+
+
+  </div>
+</div>
+
+  </body>
+
+</html>

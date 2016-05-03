@@ -1,0 +1,19 @@
+{
+  "name": "bene",
+  "authors": [
+    "Zachary Milrod <zmilrod@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "angular-chart.js": "^0.9.0",
+    "angular": "^1.5.3",
+    "Chart.js": "~1.0.2",
+    "express": "^4.13.4"
+  }
+}

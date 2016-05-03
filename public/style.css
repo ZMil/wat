@@ -1,0 +1,12 @@
+input, th, table{
+	text-align: center;
+}
+
+.middle{
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+.smIn{
+	width: 50px;
+}
