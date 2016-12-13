@@ -25,7 +25,7 @@
           <tr>
             <th>Items</th>
             <th>Percent Worth</th>
-            <th>Grade</th>
+            <th>Grade (Out of 100)</th>
           </tr>
       </thead>
 
@@ -35,7 +35,7 @@
       <td><input type="number" placeholder="% of final grade" ng-model="cat.percent"></input></td>
       <td><input type="number" placeholder="Grade" ng-model="cat.grade"></input></td>
         </tr>
-        
+
       </tbody>
 
     </table>
@@ -61,7 +61,7 @@
 
 
     <h4 ng-repeat="c in cutOffs" ng-if="c.needed > 0" class="text-center">
-      
+
     To get an {{c.letter}} ( {{c.cutOff}} ) you will need to get a {{c.needed}} on your final.
 
 
@@ -76,7 +76,7 @@
     <h1 class="text-center">Grading</h1>
 
     <div ng-repeat="c in cutOffs" class="text-center">
-      
+
       <span>{{c.letter}} has a cut off at</span>
       <input type="number" ng-model="c.cutOff" class="smIn"></input>
 
